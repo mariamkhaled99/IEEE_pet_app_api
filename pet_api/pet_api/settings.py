@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-<<<<<<< HEAD
-import django_heroku
-=======
->>>>>>> 8b564a281cc77aa99d7088d20569eb9ecef483b9
+
+import django_on_heroku
+
+
 import os
 from pathlib import Path
 
@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-kxih-3#oxw*7&v#6xa3ubcy@xx=9#$o*n3aa2zh&f#3huteweb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -128,8 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+# STATICFILES_DIRS = os.path.join(BASE_DIR,'static')
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
@@ -139,4 +140,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS=True
 
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
+

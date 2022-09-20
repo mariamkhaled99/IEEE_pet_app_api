@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--ec3z0w$-4bj==&s@w%k(z_s&51bei+rd1_6-f%=)8m3^=lugt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['git.heroku.com/pet-api-project.git','127.0.0.1:8000']
 

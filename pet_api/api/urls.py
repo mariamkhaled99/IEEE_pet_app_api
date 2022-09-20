@@ -1,9 +1,19 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
+from .views import Postviewset,Locationviewset,Breedviewset,Categoryviewset
+from rest_framework.routers import DefaultRouter
+
+router=DefaultRouter()
+router.register('api_post',Postviewset)
+router.register('api_breed',Breedviewset)
+router.register('api_category',Categoryviewset)
+router.register('api_location',Locationviewset)
+
 
 
 urlpatterns = [
     # breed
+    path('', include(router.urls)),
     # ------------------------------------------
     path('breeds/',views.get_data_breeds ),
     path('breeds/<str:pk>/',views.get_data_breed ),

@@ -2,10 +2,25 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Category,Location,Breed,Post
 from .serializers import LocationSerializer,BreedSerializer,PostSerializer,CategorySerializer
-
+from rest_framework import viewsets
 
 # Create your views here.
-
+class Postviewset(viewsets.ModelViewSet):
+    queryset=Post.objects.all()
+    serializer_class=PostSerializer
+# ----------------------------------------------------
+class Breedviewset(viewsets.ModelViewSet):
+    queryset=Breed.objects.all()
+    serializer_class=BreedSerializer
+# ----------------------------------------------------
+class Locationviewset(viewsets.ModelViewSet):
+    queryset=Location.objects.all()
+    serializer_class=LocationSerializer
+# ----------------------------------------------------
+class Categoryviewset(viewsets.ModelViewSet):
+    queryset=Category.objects.all()
+    serializer_class=CategorySerializer
+# ----------------------------------------------------
 # Locations :
 # all locations
 # --------------------------------------------------------------
